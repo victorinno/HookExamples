@@ -7,18 +7,7 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class GeradorXmlcompactados extends GeradorArquivos {
-
-    @Override
-    protected byte[] processar(byte[] dados) throws IOException {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream);
-        zipOutputStream.putNextEntry(new ZipEntry("internal"));
-        zipOutputStream.write(dados);
-        zipOutputStream.closeEntry();
-        zipOutputStream.close();
-        return outputStream.toByteArray();
-    }
+public class GeradorXml extends GeradorArquivos {
 
     @Override
     protected String gerarConteudo(Map<String, Object> propriedades) {
