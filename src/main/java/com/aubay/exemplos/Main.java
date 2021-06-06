@@ -13,7 +13,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         long id = 1l;
         GeradorXml geradorXml = new GeradorXml();
-//        geradorXmlcompactados.setPosProcessador(new CompatadorPosProcessor());
         ServicoProduto servicoProdutoXml = new ServicoProduto(geradorXml);
         servicoProdutoXml.getDao().salvar(new Produto(id, "teste", 123.45));
         servicoProdutoXml.gravarEntidadeEmArquivo(id, "testXml.xml");
