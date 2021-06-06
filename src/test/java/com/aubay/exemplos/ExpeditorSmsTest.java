@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.text.MessageFormat;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ExpeditorSmsTest {
 
@@ -16,6 +16,6 @@ class ExpeditorSmsTest {
         contato.setNumero(123L);
         String mensagem = "test";
         String envio = expeditorSms.enviar(contato, mensagem);
-        assertEquals(MessageFormat.format("'{'''tipo'': ''sms'', ''contato'': ''{0}'', ''mensagem'':''{1}'''}'", contato.getNumero(), mensagem),envio);
+        assertEquals(MessageFormat.format("'{'''tipo'': ''sms'', ''contato'': ''{0}'', ''mensagem'':''{1}'''}'", contato.getNumero(), mensagem), envio);
     }
 }

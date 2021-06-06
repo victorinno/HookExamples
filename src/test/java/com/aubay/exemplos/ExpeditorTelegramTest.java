@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.text.MessageFormat;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ExpeditorTelegramTest {
 
@@ -16,6 +16,6 @@ class ExpeditorTelegramTest {
         contato.setTelegram("teste");
         String mensagem = "test";
         String envio = expeditorTelegram.enviar(contato, mensagem);
-        assertEquals(MessageFormat.format("'{'''tipo'': ''telegram'', ''contato'': ''{0}'', ''mensagem'':''{1}'''}'", contato.getTelegram(), mensagem),envio);
+        assertEquals(MessageFormat.format("'{'''tipo'': ''telegram'', ''contato'': ''{0}'', ''mensagem'':''{1}'''}'", contato.getTelegram(), mensagem), envio);
     }
 }

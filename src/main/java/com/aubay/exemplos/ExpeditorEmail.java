@@ -2,9 +2,15 @@ package com.aubay.exemplos;
 
 import java.text.MessageFormat;
 
-public class ExpeditorEmail {
-    public String enviar(Contato contato, String mensagem){
-        String email = contato.getEmail();
-        return MessageFormat.format("'{'''tipo'': ''email'', ''contato'': ''{0}'', ''mensagem'':''{1}'''}'", email, mensagem);
+public class ExpeditorEmail extends Expeditor<String> {
+
+    @Override
+    protected String getTipo() {
+        return "email";
+    }
+
+    @Override
+    protected String getContato(Contato contato) {
+        return contato.getEmail();
     }
 }
